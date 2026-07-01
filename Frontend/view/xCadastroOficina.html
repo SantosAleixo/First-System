@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kajota Garage</title>
+  <link rel="stylesheet" href="../css/xCadastroOficina.css">
+  <script src="../controller/cadastro.js" defer></script>
+</head>
+
+<body>
+
+  <header>
+    <!--Logo da Oficina-->
+    <section>
+      <div class="banner">
+        <img src="../Imagens/logokj.png" alt="Logo-da-Oficina">
+      </div>
+    </section>
+
+    <!--menu de navegação-->
+    <div class="menuOpcoes">
+      <nav>
+        <ul>
+          <li><a href="indexMain.html">Página Inicial</a></li>
+          <li><a href="xServicosOficina.html">Nossos Serviços</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="xLoginOficina.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!--Corpo principal do sistema-->
+  <main id="conteudo">
+    <form>
+      <section>
+        <div>
+          <h1>Cadastre-se</h1>
+        </div>
+
+        <!--INPUTS para os usuarioa preencherem os dad#s-->
+        <div>
+          <input type="text" placeholder="Nome" id="nome">
+        </div>
+
+        <div>
+          <input type="text" placeholder="CPF" id="cpf">
+        </div>
+
+        <div>
+          <input type="text" placeholder="Telefone" id="telefone">
+        </div>
+
+        <div>
+          <input type="text" placeholder="E-mail" id="email">
+        </div>
+
+
+        <div>
+          <input type="text" placeholder="Endereço" id="endereco">
+        </div>
+
+        <div>
+          <input type="password" placeholder="Senha" id="campoSenhaCadastro">
+        </div>
+      </section>
+
+
+      <!-- Botão para efetuar cadastro e cancelar -->
+      <section>
+        <!--Trocar button por LINK(<a>), para chamar a página de login quando o cliente fizer o cadastro -->
+        <div class="botoes">
+          <button type="button" class="btnCadastrar" onclick="cadastrarCliente()">Cadastrar</button>
+          <p id="mensagem"></p>
+          <button type="button" class="btnCancelar">Cancelar</button>
+        </div>
+
+        <section>
+          <div>
+            <!-- Botão para analisar tabelas de clientes-->
+            <a href="xTabelaClientes.html" class="btnAnalise"> Analise Sing-in</a>
+          </div>
+        </section>
+
+        <section>
+          <!--botão para voltar para à página anterior-->
+          <div>
+            <a href="indexMain.html" class="voltarAoinicio">&#8592; Voltar</a>
+          </div>
+        </section>
+    </form>
+
+
+  </main>
+
+  <footer>
+
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kajota Garage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/xLoginOficina.css">
+    <Script src="../controller/login.js" defer></Script>
+</head>
+
+<body>
+    <header>
+        <!--Logo da Oficina-->
+       
+        <section>
+            <div class="banner">
+                <img src="../Imagens/logokj.png" alt="Logo-da-Oficina">
+            </div>
+        </section>
+
+
+        <!--MENU DE NAVEGAÇÃO-->
+        <div class="menuOpcoes">
+            <nav>
+                <ul>
+                    <li><a href="indexMain.html"> Home Page </a></li>
+                    <li><a href="xServicosOficina.html"> Services </a></li>
+                    <li><a href="xCadastroOficina.html"> Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <form>
+            <div>
+                <h3>Login</h3>
+                <input type="text" placeholder="E-mail" id="email"></input>
+            </div>
+            <!--Input for password-->
+            <div>
+                <h3>Senha</h3>
+                <input type="password" placeholder="Password" id="senha"></input>
+            </div>
+            <!--Botôes Login e Cancel-->
+            <div class="botoes">
+                <button type="button" class="btn btn-success" id="btnEntrar" onclick="loginCliente()">Entrar</button>
+
+                <button type="reset" class="btn btn-danger">Cancelar</button>
+
+                <p id="mensagemDate"></p>
+            </div>
+
+            <!--botão para voltar para à página anterior-->
+            <div>
+                <a href="indexMain.html" class="voltarAoinicio">&#8592; Voltar</a>
+            </div>
+        </form>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+    <footer>
+
+    </footer>
+</body>
+
+
+</html>

@@ -1,0 +1,288 @@
+/* BODY */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgb(10, 10, 10);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* CABEÇALHO */
+header {
+  background-color: #000000;
+}
+
+/* Botão para voltar ao inicio*/
+.voltarAoinicio {
+    background-color: #8db2d9;
+    color: rgb(245, 245, 245);
+    width: 30vh;
+    height: 70%;
+    border-radius: 0%;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.voltarAoinicio:hover {
+    background-color: #0f4278;
+}
+
+/* Área principal que envolve o formulário */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* BANNER */
+.banner {
+  position: relative;
+  width: 100%;
+  margin-top: 70px;
+  /* espaço pro menu fixo não cobrir o banner */
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* MENU DE NAVEGAÇÃO */
+.menuOpcoes {
+  background-color: #0a0a0a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 40px;
+  box-sizing: border-box;
+}
+
+.menuOpcoes nav {
+  flex: 1;
+}
+
+.menuOpcoes nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 140px;
+  margin: 0;
+  padding: 0;
+}
+
+.menuOpcoes nav a {
+  color: rgb(249, 248, 248);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.menuOpcoes nav a:hover {
+  color: #fff;
+}
+
+.menuOpcoes img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* HERO - SERVIÇOS DA OFICINA */
+.servicosOficina {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.servicosOficina img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* overlay escuro sobre a imagem para o texto ficar legível */
+.servicosOficina::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+.servicosOficina h1 {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.servicosOficina .btn {
+  position: relative;
+  z-index: 2;
+  background-color: #f10a0a;
+  color: #fff;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.servicosOficina .btn:hover {
+  background-color: #900;
+}
+
+/* NOSSOS SERVIÇOS */
+.servicos {
+  background-color: rgb(242, 234, 234);
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.servicos h2 {
+  color: #580303;
+  margin-bottom: 30px;
+  font-size: 48px;
+}
+
+.gridServicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cardServico {
+  background-color: #1a1a1a;
+  border: 1px solid #2b2b2b;
+  border-radius: 8px;
+  padding: 24px 16px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.cardServico:hover {
+  transform: translateY(-4px);
+  border-color: #f10a0a;
+}
+
+.cardServico i {
+  font-size: 36px;
+  color: #f10a0a;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.cardServico h3 {
+  color: #fff;
+  font-size: 17px;
+  margin: 0 0 8px;
+}
+
+.cardServico p {
+  color: #b5b5b5;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* DIFERENCIAIS */
+.diferenciais {
+  background-color: #f8f6f6;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 30px 20px;
+}
+
+.diferenciais .selo {
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 30px;
+  border: 1px solid #2b2b2b;
+}
+
+/* ESPECIALIDADES (logos das marcas atendidas) */
+.especialidades {
+  background-color: rgb(10, 10, 10);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.especialidades h2 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.especialidades img {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+}
+
+/* RODAPÉ */
+footer {
+  background-color: #111;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  border-top: 1px solid #0b0b0b;
+}
+
+footer .sobre {
+  color: #f6efef;
+  background-color: rgb(10, 10, 10);
+}
+
+/* Imagem do WhatsApp */
+.imgWhatsApp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  border-radius: 50%;
+  width: 57px;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#mensagem.sucesso {
+  color: #15803d;
+}
+
+#mensagem.erro {
+  color: #f10a0a
+}

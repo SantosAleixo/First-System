@@ -1,0 +1,245 @@
+/*STYLE CADASTRO*/
+
+/* BODY */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: black;
+    color: #fff;
+    padding-top: 60px; /* espaço para a navbar fixa não cobrir o conteúdo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* CABEÇALHO */
+header {
+    display: block;
+    background-color: #000000;
+    border-bottom: 2px solid rgb(255, 0, 0);
+}
+
+/* Área principal que envolve o formulário */
+main,
+#conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* O formulário em si */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #1a1a1a;
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Inputs */
+form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2a2a2a;
+    color: white;
+    font-size: 15px;
+}
+
+
+/* Imagem(logo) da oficina */
+.banner {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media(max-width: 480px) {
+    .banner {
+        height: 70px;
+    }
+}
+
+.banner img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* MENU DE NAVEGAÇÃO */
+.menuOpcoes {
+    background-color: #f90000;
+    padding: 15px 0; /* ← aumentei o padding (estava 5px, ficava pequeno) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.menuOpcoes nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px; /* ← espaçamento entre os itens */
+    margin: 0;
+    padding: 0 10px;
+    flex-direction: row; /* ← corrigido (vertical não existe) */
+    background-color: transparent;
+}
+
+.menuOpcoes nav a {
+    color: rgb(249, 248, 248);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.menuOpcoes nav a:hover {
+    color: #fff;
+}
+/* FIM DO MENU */
+
+/********************/
+
+/* Botões */
+.btnCadastrar,
+.btnCancelar,
+.voltarAoinicio,
+.btnAnalise {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+}
+
+.btnCadastrar {
+    background: rgb(6, 160, 24);
+    color: rgb(1, 69, 14);
+}
+
+.btnCadastrar:hover {
+    background-color: white;
+}
+
+.btnCancelar {
+    background: rgb(255, 0, 0);
+    color: rgb(0, 0, 0);
+}
+
+.btnCancelar:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+/* Botão para voltar ao inicio*/
+.voltarAoinicio {
+    background-color: #5b748e;
+    color: rgb(245, 245, 245);
+    text-decoration: none;
+    display: inline-block;
+}
+
+.voltarAoinicio:hover {
+    background-color: black;
+    
+}
+
+/*Botão para analisar cadastro de usuarios */
+.btnAnalise {
+    background-color: rgb(205, 205, 6);
+    color: rgb(14, 14, 14);
+    padding: 10px 15px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+
+}
+
+.btnAnalise:hover {
+    background-color: #929c01;
+    color: whitesmoke
+}
+
+/* RODAPÉ */
+footer {
+    background-color: #111;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    border-top: 1px solid #0b0b0b;
+}
+
+footer .sobre {
+    color: #f6efef;
+    background-color: rgb(10, 10, 10);
+}
+
+/* ===================== */
+/* RESPONSIVIDADE MOBILE */
+/* ===================== */
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+        justify-content: center;
+    }
+
+    .menuOpcoes nav ul {
+        gap: 16px;
+    }
+
+    .menuOpcoes nav a {
+        font-size: 14px;
+    }
+
+    body {
+        padding-top: 110px; /* menu agora ocupa mais altura empilhado */
+    }
+
+    form {
+        padding: 25px;
+        max-width: 100%;
+    }
+
+    .btnCadastrar,
+    .btnCancelar,
+    .btnAnalise,
+    .voltarAoinicio {
+        width: calc(100% - 20px);
+        text-align: center;
+        margin: 8px auto;
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .menuOpcoes nav ul {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body {
+        padding-top: 150px;
+    }
+
+    h1, .logo-text {
+        font-size: 20px;
+    }
+}

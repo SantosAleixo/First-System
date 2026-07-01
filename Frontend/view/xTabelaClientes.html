@@ -1,0 +1,70 @@
+<!--JSON PARA VISUALIZAÇÃO DE CADASTRO E DELETAR O USUARIO-->
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/xTabelaClientes.css">
+    <title>Database List</title>
+    <script src="../JS/indexTabelaClientes.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+
+        <!--MENU DE NAVEGAÇÃO-->
+        <div class="menuOpcoes">
+            <nav>
+                <ul>
+                    <li><a href="indexMain.html"> Página Inicial </a></li>
+                    <li><a href="#servicos">Services</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="cadastroOficina.html">Sign-Up</a></li>
+                    <li><a href="xLoginOficina.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section>
+            <!-- Titulo da tela de clientes cadastrados-->
+            <div class="tituloPagina">
+                <h1>Clientes cadastrados</h1>
+            </div>
+        </section>
+    </header>
+
+
+    <main>
+        <table class="table" id="tabela">
+            <thead>
+                <tr class="tr">
+                    <th scope="col">Nome</th>
+                    <th scope="col">CPF</th>
+                    <th scope="col">Telefone</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Endereço</th>
+                    <th scope="col" id="excluir">Excluir</th>
+                    <th scope="col" id="editar">Editar Cadastro</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!--Navegador chaa automaticamente-->
+            </tbody>
+
+        </table>
+
+        <section>
+            <!--botão para voltar para à página anterior-->
+            <div>
+                <a href="xCadastroOficina.html" class="voltarAoinicio">&#8592; Voltar</a>
+            </div>
+        </section>
+    </main>
+
+
+</body>
+
+</html>

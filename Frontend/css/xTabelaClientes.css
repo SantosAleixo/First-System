@@ -1,0 +1,135 @@
+body {
+    font-family: Arial;
+    background: #9d9c9c;
+    text-align: center;
+    padding-top: 80px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #000000;
+    border-bottom: 2px solid rgb(255, 0, 0);
+}
+
+h1 {
+    background-color: transparent;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+/* Colocar o baner */
+
+
+/* MENU DE NAVEGAÇÃO */
+.menuOpcoes {
+    background-color: #f90000;
+    padding: 35px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.menuOpcoes nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    /* ← espaçamento entre os itens */
+    margin: 0;
+    padding: 0;
+    flex-direction: row;
+    /* ← corrigido (vertical não existe) */
+    background-color: transparent;
+}
+
+.menuOpcoes nav a {
+    color: rgb(249, 248, 248);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.menuOpcoes nav a:hover {
+    color: #fff;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+
+table {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 70%;
+    background: rgb(193, 225, 193);
+    box-shadow: 0 0 10px rgba(15, 15, 15, 0.1);
+}
+
+th,
+td {
+    padding: 10px 15px;
+    border: 1px solid #dddddd;
+}
+
+thead {
+    background: #0f0f0f;
+    color: white;
+}
+
+.voltarAoinicio {
+    background-color: #8db2d9;
+    color: rgb(21, 20, 20);
+    padding: 10px 15px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.voltarAoinicio:hover {
+    background-color: black;
+}
+
+.excluir {
+    background: rgb(244, 3, 3);
+    color: rgb(245, 242, 242);
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+}
+
+.excluir:hover {
+    background-color: #000000;
+}
+
+.editar {
+    background: rgb(211, 200, 0);
+    color: rgb(18, 17, 17);
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+}
+
+.editar:hover{
+    background-color: #ffffff;
+}
+
+.form {
+    margin-top: 20px;
+}
