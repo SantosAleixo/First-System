@@ -1,245 +1,245 @@
-/*STYLE CADASTRO*/
+/* ==========================================================
+   Kajota Garage — Página de Cadastro
+   ========================================================== */
 
-/* BODY */
+:root {
+  --preto-asfalto: #000000;
+  --cinza-metal: #3a3d42;
+  --cinza-claro: #f2f2f0;
+  --branco: #ffffff;
+  --laranja-oficina: #c90707;
+  --laranja-hover: #c8541e;
+  --verde-cadastrar: #2f9e5c;
+  --verde-hover: #257d48;
+  --vermelho-cancelar: #b23b3b;
+  --sombra: rgba(0, 0, 0, 0.15);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: black;
-    color: #fff;
-    padding-top: 60px; /* espaço para a navbar fixa não cobrir o conteúdo */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: var(--cinza-claro);
+  color: var(--preto-asfalto);
+  padding-top: 70px; /* compensa a altura do menu fixo */
 }
 
-/* CABEÇALHO */
-header {
-    display: block;
-    background-color: #000000;
-    border-bottom: 2px solid rgb(255, 0, 0);
-}
+/* ================= BANNER / MENU ================= */
 
-/* Área principal que envolve o formulário */
-main,
-#conteudo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-/* O formulário em si */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #1a1a1a;
-    padding: 40px;
-    border-radius: 10px;
-    width: 100%;
-    max-width: 400px;
-}
-
-/* Inputs */
-form input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #444;
-    background-color: #2a2a2a;
-    color: white;
-    font-size: 15px;
-}
-
-
-/* Imagem(logo) da oficina */
 .banner {
-    width: 100%;
-    height: 120px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-@media(max-width: 480px) {
-    .banner {
-        height: 70px;
-    }
+  background-color: var(--preto-asfalto);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px var(--sombra);
 }
 
-.banner img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
-}
-
-/* MENU DE NAVEGAÇÃO */
 .menuOpcoes {
-    background-color: #f90000;
-    padding: 15px 0; /* ← aumentei o padding (estava 5px, ficava pequeno) */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  flex-wrap: wrap;
+}
+
+.menuOpcoes img {
+  height: 70px;
+  width: auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.menuOpcoes a:has(img):hover img {
+  transform: scale(1.05);
 }
 
 .menuOpcoes nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px; /* ← espaçamento entre os itens */
-    margin: 0;
-    padding: 0 10px;
-    flex-direction: row; /* ← corrigido (vertical não existe) */
-    background-color: transparent;
+  display: flex;
+  list-style: none;
+  gap: 28px;
 }
 
-.menuOpcoes nav a {
-    color: rgb(249, 248, 248);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-    transition: color 0.3s, transform 0.3s;
+.menuOpcoes nav ul li a {
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: 8px 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.menuOpcoes nav a:hover {
-    color: #fff;
+.menuOpcoes nav ul li a:hover {
+  color: var(--laranja-oficina);
+  border-bottom-color: var(--laranja-oficina);
 }
-/* FIM DO MENU */
 
-/********************/
+/* ================= CONTEÚDO PRINCIPAL ================= */
 
-/* Botões */
+main#conteudo {
+  display: flex;
+  justify-content: center;
+  padding: 48px 20px;
+}
+
+form {
+  background-color: var(--branco);
+  width: 100%;
+  max-width: 480px;
+  border-radius: 10px;
+  padding: 40px 36px;
+  box-shadow: 0 8px 24px var(--sombra);
+}
+
+form section:first-child div h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--preto-asfalto);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* ================= CAMPOS DE INPUT ================= */
+
+form section div {
+  margin-bottom: 16px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 15px;
+  background-color: var(--cinza-claro);
+  color: var(--preto-asfalto);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+  color: #8a8a8a;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--laranja-oficina);
+  box-shadow: 0 0 0 3px rgba(224, 102, 43, 0.15);
+  background-color: var(--branco);
+}
+
+/* ================= BOTÕES ================= */
+
+.botoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
 .btnCadastrar,
-.btnCancelar,
-.voltarAoinicio,
-.btnAnalise {
-    padding: 10px 20px;
-    margin: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 10px;
+.btnCancelar {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .btnCadastrar {
-    background: rgb(6, 160, 24);
-    color: rgb(1, 69, 14);
+  background-color: var(--verde-cadastrar);
+  color: var(--branco);
 }
 
 .btnCadastrar:hover {
-    background-color: white;
+  background-color: var(--verde-hover);
 }
 
 .btnCancelar {
-    background: rgb(255, 0, 0);
-    color: rgb(0, 0, 0);
+  background-color: var(--branco);
+  color: var(--vermelho-cancelar);
+  border: 1px solid var(--vermelho-cancelar);
 }
 
 .btnCancelar:hover {
-    background-color: rgb(241, 241, 241);
+  background-color: var(--vermelho-cancelar);
+  color: var(--branco);
 }
 
-/* Botão para voltar ao inicio*/
-.voltarAoinicio {
-    background-color: #5b748e;
-    color: rgb(245, 245, 245);
-    text-decoration: none;
-    display: inline-block;
+.btnCadastrar:active,
+.btnCancelar:active {
+  transform: scale(0.98);
 }
 
-.voltarAoinicio:hover {
-    background-color: black;
-    
+#mensagem {
+  font-size: 14px;
+  color: var(--vermelho-cancelar);
+  min-height: 20px;
+  text-align: center;
 }
 
-/*Botão para analisar cadastro de usuarios */
+/* ================= LINKS SECUNDÁRIOS ================= */
+
 .btnAnalise {
-    background-color: rgb(205, 205, 6);
-    color: rgb(14, 14, 14);
-    padding: 10px 15px;
-    margin: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--preto-asfalto);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-bottom: 1px solid var(--cinza-metal);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .btnAnalise:hover {
-    background-color: #929c01;
-    color: whitesmoke
+  color: var(--laranja-oficina);
+  border-color: var(--laranja-oficina);
 }
 
-/* RODAPÉ */
-footer {
-    background-color: #111;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    border-top: 1px solid #0b0b0b;
+.voltarAoinicio {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--cinza-metal);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
 }
 
-footer .sobre {
-    color: #f6efef;
-    background-color: rgb(10, 10, 10);
+.voltarAoinicio:hover {
+  color: var(--laranja-oficina);
 }
 
-/* ===================== */
-/* RESPONSIVIDADE MOBILE */
-/* ===================== */
+/* ================= RESPONSIVO ================= */
 
-@media (max-width: 768px) {
-    header {
-        padding: 10px 20px;
-        justify-content: center;
-    }
+@media (max-width: 600px) {
+  .menuOpcoes {
+    flex-direction: column;
+    gap: 16px;
+  }
 
-    .menuOpcoes nav ul {
-        gap: 16px;
-    }
+  .menuOpcoes nav ul {
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-    .menuOpcoes nav a {
-        font-size: 14px;
-    }
-
-    body {
-        padding-top: 110px; /* menu agora ocupa mais altura empilhado */
-    }
-
-    form {
-        padding: 25px;
-        max-width: 100%;
-    }
-
-    .btnCadastrar,
-    .btnCancelar,
-    .btnAnalise,
-    .voltarAoinicio {
-        width: calc(100% - 20px);
-        text-align: center;
-        margin: 8px auto;
-        display: block;
-    }
-}
-
-@media (max-width: 480px) {
-    .menuOpcoes nav ul {
-        gap: 10px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    body {
-        padding-top: 150px;
-    }
-
-    h1, .logo-text {
-        font-size: 20px;
-    }
+  form {
+    padding: 28px 22px;
+  }
 }

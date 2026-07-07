@@ -7,11 +7,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-/* CABEÇALHO */
-header {
-  background-color: #000000;
+  padding-top: 78px; /* compensa a altura do menu fixo */
 }
 
 /* Área principal que envolve o formulário */
@@ -26,20 +22,18 @@ main {
 .banner {
   position: relative;
   width: 100%;
-  margin-top: 70px;
-  /* espaço pro menu fixo não cobrir o banner */
   overflow: hidden;
 }
 
 .banner img {
-  width: 100%;
+  width: 100px;
   height: auto;
   object-fit: cover;
 }
 
-/* MENU DE NAVEGAÇÃO */
+/* MENU DE NAVEGAÇÃO (mesmo padrão da tela de cadastro) */
 .menuOpcoes {
-  background-color: #0a0a0a;
+  background-color: #000000;
   position: fixed;
   top: 0;
   left: 0;
@@ -47,20 +41,29 @@ main {
   z-index: 1000;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 10px 40px;
+  justify-content: space-between;
+  padding: 12px 40px;
   box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
 }
 
-.menuOpcoes nav {
-  flex: 1;
+.menuOpcoes img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.menuOpcoes a:has(img):hover img {
+  transform: scale(1.05);
 }
 
 .menuOpcoes nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 140px;
+  gap: 28px;
   margin: 0;
   padding: 0;
 }
@@ -69,47 +72,48 @@ main {
   color: rgb(249, 248, 248);
   text-decoration: none;
   font-weight: 600;
-  font-size: 18px;
-  letter-spacing: 1px;
-  transition: color 0.3s, transform 0.3s;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  padding: 8px 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .menuOpcoes nav a:hover {
-  color: #fff;
+  color: #f10a0a;
+  border-bottom-color: #f10a0a;
 }
 
-.menuOpcoes img {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* HERO - SERVIÇOS DA OFICINA */
-.servicosOficina {
+/* CARROSSEL - HERO COM SLIDES */
+.carrossel {
   position: relative;
   width: 100%;
   height: 60vh;
   overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-.servicosOficina img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
+.slide.active {
+  opacity: 1;
+  z-index: 1;
 }
 
 /* overlay escuro sobre a imagem para o texto ficar legível */
-.servicosOficina::after {
+.slide::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -117,19 +121,21 @@ main {
   z-index: 1;
 }
 
-.servicosOficina h1 {
+.conteudoSlide {
   position: relative;
   z-index: 2;
   color: #fff;
+  padding: 0 20px;
+}
+
+.conteudoSlide h1 {
   font-size: 60px;
   font-weight: 700;
   margin-bottom: 20px;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-.servicosOficina .btn {
-  position: relative;
-  z-index: 2;
+.conteudoSlide .btn {
   background-color: #f10a0a;
   color: #fff;
   padding: 12px 30px;
@@ -137,10 +143,35 @@ main {
   border-radius: 4px;
   font-weight: 600;
   transition: background 0.3s;
+  display: inline-block;
 }
 
-.servicosOficina .btn:hover {
+.conteudoSlide .btn:hover {
   background-color: #900;
+}
+
+/* BOLINHAS DE NAVEGAÇÃO */
+.dotsCarrossel {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dotsCarrossel .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dotsCarrossel .dot.active {
+  background-color: #f10a0a;
 }
 
 /* NOSSOS SERVIÇOS */
@@ -207,7 +238,7 @@ main {
 }
 
 .diferenciais .selo {
-  background-color: #1a1a1a;
+  background-color: #700101;
   color: #fff;
   font-size: 14px;
   font-weight: 600;
@@ -237,7 +268,7 @@ main {
 
 /* RODAPÉ */
 footer {
-  background-color: black;
+  background-color: rgb(50, 50, 50);
   text-align: center;
   padding: 20px;
   font-size: 14px;
@@ -246,7 +277,7 @@ footer {
 
 footer .sobre {
   color: #f6efef;
-  background: black;
+  background: rgb(50, 50, 50);
 }
 
 /* Imagem do WhatsApp */
@@ -270,4 +301,164 @@ footer .sobre {
 
 #mensagem.erro {
   color: #f10a0a
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+   ========================================================== */
+
+/* TABLET (até 768px) */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .menuOpcoes {
+    padding: 10px 20px;
+  }
+
+  .menuOpcoes img {
+    height: 55px;
+  }
+
+  .menuOpcoes nav ul {
+    gap: 16px;
+  }
+
+  .menuOpcoes nav a {
+    font-size: 13px;
+  }
+
+  .carrossel {
+    height: 50vh;
+  }
+
+  .conteudoSlide h1 {
+    font-size: 38px;
+  }
+
+  .conteudoSlide .btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  .servicos h2 {
+    font-size: 34px;
+  }
+
+  .gridServicos {
+    gap: 16px;
+  }
+
+  .diferenciais {
+    gap: 12px;
+    padding: 24px 16px;
+  }
+
+  .diferenciais .selo {
+    font-size: 13px;
+    padding: 8px 18px;
+  }
+
+  .especialidades h2 {
+    font-size: 22px;
+  }
+}
+
+/* CELULAR (até 480px) */
+@media (max-width: 480px) {
+  body {
+    padding-top: 62px;
+  }
+
+  /* menu quebra em duas linhas: logo em cima, links embaixo */
+  .menuOpcoes {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  .menuOpcoes img {
+    height: 44px;
+  }
+
+  .menuOpcoes nav ul {
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .menuOpcoes nav a {
+    font-size: 12px;
+    padding: 4px 2px;
+  }
+
+  .carrossel {
+    height: 70vh; /* mais alto pro texto caber melhor sem espremer */
+  }
+
+  .conteudoSlide h1 {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .conteudoSlide .btn {
+    padding: 9px 20px;
+    font-size: 13px;
+  }
+
+  .dotsCarrossel {
+    bottom: 12px;
+  }
+
+  .dotsCarrossel .dot {
+    width: 9px;
+    height: 9px;
+  }
+
+  .servicos {
+    padding: 32px 16px;
+  }
+
+  .servicos h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .gridServicos {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cardServico {
+    padding: 20px 14px;
+  }
+
+  .diferenciais {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .diferenciais .selo {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
+  }
+
+  .especialidades img {
+    max-width: 100%;
+  }
+
+  footer {
+    padding: 16px 12px;
+    font-size: 13px;
+  }
+
+  .imgWhatsApp {
+    width: 48px;
+    height: 48px;
+    bottom: 14px;
+    right: 14px;
+  }
 }
